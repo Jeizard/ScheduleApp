@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">ScheduleApp</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="adding_schedule">Добавление расписания</string>
+    <string name="add_schedule">Добавить расписания</string>
+    <string name="my_schedules">Мои расписания</string>
+    <string name="search">Поиск</string>
+    <string name="groups">Группы</string>
+    <string name="teachers">Преподаватели</string>
 </resources>

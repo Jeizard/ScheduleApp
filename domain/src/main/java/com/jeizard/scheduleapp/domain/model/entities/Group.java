@@ -1,12 +1,18 @@
 package com.jeizard.scheduleapp.domain.model.entities;
 
 public class Group {
-    public int id;
-    public String number;
+    private int id;
+    private String number;
+    private Boolean isLocal;
 
-    public Group(int id, String number) {
+    public Group(int id, String number, Boolean isLocal) {
         this.id = id;
         this.number = number;
+        this.isLocal = isLocal;
+    }
+
+    public Group() {
+
     }
 
     public int getId() {
@@ -23,5 +29,13 @@ public class Group {
 
     public void setNumber(String number) {
         this.number = number;
+    }
+
+    public Boolean getLocal() {
+        return isLocal;
+    }
+
+    public void setLocal(Boolean local) {
+        isLocal = local;
     }
 }

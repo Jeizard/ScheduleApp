@@ -2,40 +2,40 @@ package com.jeizard.scheduleapp.data.models.intermediate_models.lesson_teachers.
 
 import com.jeizard.scheduleapp.data.mapper.Mapper;
 import com.jeizard.scheduleapp.data.models.intermediate_models.lesson_teachers.room.entity.LessonTeachersDBEntity;
-import com.jeizard.scheduleapp.domain.model.entities.LessonTeachers;
+import com.jeizard.scheduleapp.domain.model.entities.LessonTeacher;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-public class LessonTeachersDBEntityMapper implements Mapper<LessonTeachersDBEntity, LessonTeachers> {
+public class LessonTeachersDBEntityMapper implements Mapper<LessonTeachersDBEntity, LessonTeacher> {
 
     public LessonTeachersDBEntityMapper() {
     }
 
     @Override
-    public LessonTeachers mapFromDBEntity(LessonTeachersDBEntity lessonTeachersDBEntity) {
-        LessonTeachers lessonTeachers = null;
+    public LessonTeacher mapFromDBEntity(LessonTeachersDBEntity lessonTeachersDBEntity) {
+        LessonTeacher lessonTeachers = null;
         if (lessonTeachersDBEntity != null) {
-            lessonTeachers = new LessonTeachers(lessonTeachersDBEntity.getLessonId(), lessonTeachersDBEntity.getTeacher_id());
+            lessonTeachers = new LessonTeacher(lessonTeachersDBEntity.getLessonId(), lessonTeachersDBEntity.getTeacherId());
         }
         return lessonTeachers;
     }
 
     @Override
-    public LessonTeachersDBEntity mapToDBEntity(LessonTeachers lessonTeachers) {
+    public LessonTeachersDBEntity mapToDBEntity(LessonTeacher lessonTeachers) {
         LessonTeachersDBEntity lessonTeachersDBEntity = null;
         if (lessonTeachers != null) {
-            lessonTeachersDBEntity = new LessonTeachersDBEntity(lessonTeachers.getLesson_id(), lessonTeachers.getTeacher_id());
+            lessonTeachersDBEntity = new LessonTeachersDBEntity(lessonTeachers.getLessonId(), lessonTeachers.getTeacherId());
         }
         return lessonTeachersDBEntity;
     }
 
     @Override
-    public List<LessonTeachers> mapFromDBEntity(Collection<LessonTeachersDBEntity> lessonTeachersDBEntityCollection) {
-        final List<LessonTeachers> lessonTeachersList = new ArrayList<>();
+    public List<LessonTeacher> mapFromDBEntity(Collection<LessonTeachersDBEntity> lessonTeachersDBEntityCollection) {
+        final List<LessonTeacher> lessonTeachersList = new ArrayList<>();
         for (LessonTeachersDBEntity lessonGroupsDBEntity : lessonTeachersDBEntityCollection) {
-            final LessonTeachers lessonTeachers = mapFromDBEntity(lessonGroupsDBEntity);
+            final LessonTeacher lessonTeachers = mapFromDBEntity(lessonGroupsDBEntity);
             if (lessonTeachers != null) {
                 lessonTeachersList.add(lessonTeachers);
             }
@@ -44,9 +44,9 @@ public class LessonTeachersDBEntityMapper implements Mapper<LessonTeachersDBEnti
     }
 
     @Override
-    public List<LessonTeachersDBEntity> mapToDBEntity(Collection<LessonTeachers> lessonTeachersCollection) {
+    public List<LessonTeachersDBEntity> mapToDBEntity(Collection<LessonTeacher> lessonTeachersCollection) {
         final List<LessonTeachersDBEntity> lessonTeachersDBEntityList = new ArrayList<>();
-        for (LessonTeachers lessonTeachers : lessonTeachersCollection) {
+        for (LessonTeacher lessonTeachers : lessonTeachersCollection) {
             final LessonTeachersDBEntity lessonTeachersDBEntity = mapToDBEntity(lessonTeachers);
             if (lessonTeachersDBEntity != null) {
                 lessonTeachersDBEntityList.add(lessonTeachersDBEntity);

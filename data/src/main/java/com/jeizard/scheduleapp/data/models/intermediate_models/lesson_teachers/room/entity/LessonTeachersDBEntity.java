@@ -1,12 +1,13 @@
 package com.jeizard.scheduleapp.data.models.intermediate_models.lesson_teachers.room.entity;
 
+import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.Index;
 
-import com.jeizard.scheduleapp.data.models.lessons.room.entity.LessonDBEntity;
-import com.jeizard.scheduleapp.data.models.teachers.room.entity.TeacherDBEntity;
+import com.jeizard.scheduleapp.data.models.single_models.lessons.room.entity.LessonDBEntity;
+import com.jeizard.scheduleapp.data.models.single_models.teachers.room.entity.TeacherDBEntity;
 
 @Entity(
         tableName = "lesson_teachers",
@@ -33,30 +34,32 @@ import com.jeizard.scheduleapp.data.models.teachers.room.entity.TeacherDBEntity;
 
 )
 public class LessonTeachersDBEntity {
+    @NonNull
     @ColumnInfo(name = "lesson_id")
-    public int lessonId;
+    private Long lessonId;
+    @NonNull
     @ColumnInfo(name = "teacher_id")
-    public int teacher_id;
+    private Long teacherId;
 
-    public LessonTeachersDBEntity(int lessonId, int teacher_id) {
+    public LessonTeachersDBEntity(Long lessonId, Long teacherId) {
         this.lessonId = lessonId;
-        this.teacher_id = teacher_id;
+        this.teacherId = teacherId;
     }
 
-    public int getLessonId() {
+    public Long getLessonId() {
         return lessonId;
     }
 
-    public void setLessonId(int lessonId) {
+    public void setLessonId(Long lessonId) {
         this.lessonId = lessonId;
     }
 
-    public int getTeacher_id() {
-        return teacher_id;
+    public Long getTeacherId() {
+        return teacherId;
     }
 
-    public void setTeacher_id(int teacher_id) {
-        this.teacher_id = teacher_id;
+    public void setTeacherId(Long teacherId) {
+        this.teacherId = teacherId;
     }
 }
 

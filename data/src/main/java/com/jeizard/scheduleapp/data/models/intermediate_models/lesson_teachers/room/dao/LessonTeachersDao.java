@@ -6,25 +6,28 @@ import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
 
+import com.jeizard.scheduleapp.data.models.intermediate_models.group_specialties.room.entity.GroupSpecialtiesDBEntity;
 import com.jeizard.scheduleapp.data.models.intermediate_models.lesson_teachers.room.entity.LessonTeachersDBEntity;
+import com.jeizard.scheduleapp.data.room.dao.BaseDao;
 
 import java.util.List;
 
 @Dao
-public interface LessonTeachersDao {
-
-    @Insert
-    void insert(LessonTeachersDBEntity lessonTeachersDBEntity);
-
-    @Update
-    void update(LessonTeachersDBEntity lessonTeachersDBEntity);
-
-    @Delete
-    void delete (LessonTeachersDBEntity lessonTeachersDBEntity);
+public abstract class LessonTeachersDao implements BaseDao<LessonTeachersDBEntity> {
 
     @Query("DELETE FROM lesson_teachers")
-    void deleteAllLessonTeachers();
+    public abstract void deleteAllLessonTeachers();
 
     @Query("SELECT * FROM lesson_teachers")
-    List<LessonTeachersDBEntity> getAllLessonTeachers();
+    public abstract List<LessonTeachersDBEntity> getAllLessonTeachers();
+
+    @Override
+    public void deleteAll() {
+        deleteAllLessonTeachers();
+    }
+
+    @Override
+    public List<LessonTeachersDBEntity> getAll() {
+        return getAllLessonTeachers();
+    }
 }

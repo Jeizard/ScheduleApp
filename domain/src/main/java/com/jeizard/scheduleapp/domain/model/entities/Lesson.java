@@ -3,9 +3,9 @@ package com.jeizard.scheduleapp.domain.model.entities;
 import java.sql.Time;
 
 public class Lesson {
-    public int id;
-    public Time startTime;
-    public Time endTime;
+    private int id;
+    private Time startTime;
+    private Time endTime;
 
     public Lesson(int id, Time startTime, Time endTime) {
         this.id = id;

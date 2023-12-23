@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue"
+    android:theme="@style/ThemeOverlay.ScheduleApp.FullscreenContainer"
+    tools:context=".presentation.Fragments.AddingLessonFragment"
+    android:id="@+id/addingLessonLayout">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_extrabold"
+        android:text="Расписание"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/backButton" />
+
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="10dp"
+        android:background="@null"
+        android:src="@drawable/ic_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/doneButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="10dp"
+        android:background="@null"
+        android:src="@drawable/ic_done"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/title"
+        android:layout_width="0dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="36dp"
+        android:paddingStart="30dp"
+        android:fontFamily="@font/inter_extrabold"
+        android:inputType="text"
+        android:hint="Название"
+        android:textColor="#303030"
+        android:textColorHint="#BF303030"
+        android:background="@drawable/background_main"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <EditText
+        android:id="@+id/subject"
+        android:layout_width="0dp"
+        android:layout_height="42dp"
+        android:paddingStart="30dp"
+        android:fontFamily="@font/inter_extrabold"
+        android:inputType="text"
+        android:hint="Предмет"
+        android:textColor="#303030"
+        android:textColorHint="#BF303030"
+        android:background="@color/grey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title" />
+
+    <EditText
+        android:id="@+id/teacher"
+        android:layout_width="0dp"
+        android:layout_height="42dp"
+        android:paddingStart="30dp"
+        android:fontFamily="@font/inter_extrabold"
+        android:inputType="text"
+        android:hint="Преподаватель"
+        android:textColor="#303030"
+        android:textColorHint="#BF303030"
+        android:background="@color/grey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/endTime" />
+
+    <EditText
+        android:id="@+id/cabinet"
+        android:layout_width="0dp"
+        android:layout_height="42dp"
+        android:paddingStart="30dp"
+        android:fontFamily="@font/inter_extrabold"
+        android:inputType="text"
+        android:hint="Кабинет"
+        android:textColor="#303030"
+        android:textColorHint="#BF303030"
+        android:background="@color/grey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/teacher" />
+
+    <TextView
+        android:id="@+id/dayOfWeek"
+        android:layout_width="0dp"
+        android:layout_height="42dp"
+        android:paddingStart="30dp"
+        android:background="@color/grey"
+        android:fontFamily="@font/inter_extrabold"
+        android:gravity="start|center_vertical"
+        android:text="День"
+        android:textColor="#303030"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/dayOfWeekSpinner"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/subject" />
+
+    <Spinner
+        android:id="@+id/dayOfWeekSpinner"
+        android:layout_width="0dp"
+        android:layout_height="42dp"
+        android:background="@color/grey"
+        android:fontFamily="@font/inter_extrabold"
+        android:textColor="#303030"
+        android:textColorHint="#BF303030"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/dayOfWeek"
+        app:layout_constraintTop_toBottomOf="@+id/subject" />
+
+    <ImageView
+        android:id="@+id/dayOfWeekArrow"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:contentDescription="arrow"
+        android:src="@drawable/ic_arrow_drop_down"
+        app:layout_constraintBottom_toBottomOf="@id/dayOfWeekSpinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/subject" />
+
+    <TextView
+        android:id="@+id/startTime"
+        android:layout_width="0dp"
+        android:layout_height="42dp"
+        android:paddingStart="30dp"
+        android:background="@color/grey"
+        android:fontFamily="@font/inter_extrabold"
+        android:gravity="start|center_vertical"
+        android:text="Время начала"
+        android:textColor="#303030"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/startTimeButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dayOfWeek" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/startTimeButton"
+        android:layout_width="0dp"
+        android:layout_height="42dp"
+        android:background="@color/grey"
+        android:fontFamily="@font/inter_extrabold"
+        android:textSize="18sp"
+        android:textColor="#303030"
+        android:textColorHint="#BF303030"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/startTime"
+        app:layout_constraintTop_toBottomOf="@+id/dayOfWeek" />
+
+    <TextView
+        android:id="@+id/endTime"
+        android:layout_width="0dp"
+        android:layout_height="42dp"
+        android:paddingStart="30dp"
+        android:background="@color/grey"
+        android:fontFamily="@font/inter_extrabold"
+        android:gravity="start|center_vertical"
+        android:text="Время конца"
+        android:textColor="#303030"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/endTimeButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/startTime" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/endTimeButton"
+        android:layout_width="0dp"
+        android:layout_height="42dp"
+        android:background="@color/grey"
+        android:fontFamily="@font/inter_extrabold"
+        android:textSize="18sp"
+        android:textColor="#303030"
+        android:textColorHint="#BF303030"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/endTime"
+        app:layout_constraintTop_toBottomOf="@+id/startTime" />
+
+    <TextView
+        android:id="@+id/lessonType"
+        android:layout_width="0dp"
+        android:layout_height="42dp"
+        android:paddingStart="30dp"
+        android:background="@color/grey"
+        android:fontFamily="@font/inter_extrabold"
+        android:gravity="start|center_vertical"
+        android:text="Тип"
+        android:textColor="#303030"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/lessonTypeSpinner"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cabinet" />
+
+    <Spinner
+        android:id="@+id/lessonTypeSpinner"
+        android:layout_width="0dp"
+        android:layout_height="42dp"
+        android:background="@color/grey"
+        android:fontFamily="@font/inter_extrabold"
+        android:textColor="#303030"
+        android:textColorHint="#BF303030"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/lessonType"
+        app:layout_constraintTop_toBottomOf="@+id/cabinet" />
+
+    <ImageView
+        android:id="@+id/lessonTypeArrow"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:contentDescription="arrow"
+        android:src="@drawable/ic_arrow_drop_down"
+        app:layout_constraintBottom_toBottomOf="@id/lessonTypeSpinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cabinet" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

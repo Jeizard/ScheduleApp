@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue"
+    android:theme="@style/ThemeOverlay.ScheduleApp.FullscreenContainer"
+    tools:context=".presentation.Fragments.AddingSchedulesByGroupsFragment">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/inter_extrabold"
+        android:text="@string/adding_schedule"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/backButton"
+        app:layout_constraintTop_toTopOf="@+id/backButton" />
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchLine"
+        android:layout_width="0dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/background_search"
+        android:fontFamily="@font/inter_extrabold"
+        android:inputType="text"
+        android:textColorHint="@color/search_text_hint"
+        android:textSize="20sp"
+        app:iconifiedByDefault="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:queryHint="@string/search"
+        app:searchIcon="@null" />
+
+    <ImageView
+        android:id="@+id/backgroundFilters"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/background_filters"
+        app:layout_constraintTop_toBottomOf="@+id/searchLine" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/filterGroupButton"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="3dp"
+        android:background="@drawable/background_left_filter"
+        android:fontFamily="@font/inter_extrabold"
+        android:scaleX="0.97"
+        android:scaleY="0.85"
+        android:text="@string/groups"
+        android:textAllCaps="false"
+        android:textColor="@color/main_text"
+        android:textScaleX="0.97"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/filterTeacherButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/backgroundFilters" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/filterTeacherButton"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:layout_marginEnd="3dp"
+        android:background="@drawable/background_right_filter"
+        android:backgroundTint="@color/filter"
+        android:fontFamily="@font/inter_extrabold"
+        android:scaleX="0.97"
+        android:scaleY="0.85"
+        android:text="@string/teachers"
+        android:textAllCaps="false"
+        android:textColor="@color/main_text"
+        android:textScaleX="0.97"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/filterGroupButton"
+        app:layout_constraintTop_toTopOf="@+id/backgroundFilters" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/grey"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/backgroundFilters" />
+
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="10dp"
+        android:background="@null"
+        android:src="@drawable/ic_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

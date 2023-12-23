@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "746725432742",
+    "firebase_url": "https://scheduleapp-751de-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "scheduleapp-751de",
+    "storage_bucket": "scheduleapp-751de.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:746725432742:android:6888e286c0e20675190367",
+        "android_client_info": {
+          "package_name": "com.jeizard.scheduleapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQfgLBW8viIH_tNnxhs_Gie1W7-o2NbrY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

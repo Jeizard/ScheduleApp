@@ -1,5 +1,6 @@
 plugins {
     id 'com.android.library'
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -27,30 +28,14 @@ android {
 
 dependencies {
 
-    def room_version = "2.6.0"
-    def lifecycle_version = "2.6.2"
+    implementation 'com.google.firebase:firebase-database:20.3.0'
+    def room_version = "2.6.1"
 
     implementation "androidx.room:room-runtime:$room_version"
     annotationProcessor "androidx.room:room-compiler:$room_version"
     implementation "androidx.room:room-ktx:2.$room_version"
 
-    // ViewModel
-    implementation "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version"
-    // LiveData
-    implementation "androidx.lifecycle:lifecycle-livedata:$lifecycle_version"
-    // Lifecycles only (without ViewModel or LiveData)
-    implementation "androidx.lifecycle:lifecycle-runtime:$lifecycle_version"
-
-    // Saved state module for ViewModel
-    implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycle_version"
-
-    // Annotation processor
-    annotationProcessor "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
-    // alternately - if using Java8, use the following instead of lifecycle-compiler
-    implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
-
-    // optional - helpers for implementing LifecycleOwner in a Service
-    implementation "androidx.lifecycle:lifecycle-service:$lifecycle_version"
+    implementation 'com.google.code.gson:gson:2.10.1'
 
     implementation project(path: ':domain')
     testImplementation 'junit:junit:4.13.2'

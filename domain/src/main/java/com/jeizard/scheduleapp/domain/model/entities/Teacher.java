@@ -1,10 +1,10 @@
 package com.jeizard.scheduleapp.domain.model.entities;
 
 public class Teacher {
-    public int id;
-    public String surname;
-    public String name;
-    public String patronymic;
+    private int id;
+    private String surname;
+    private String name;
+    private String patronymic;
 
     public Teacher(int id, String surname, String name, String patronymic) {
         this.id = id;
